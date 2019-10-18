@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools">
+
+    <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:focusable="true"
+            app:cardElevation="15dp"
+            android:focusableInTouchMode="true"
+            android:layout_marginRight="5dp"
+            android:layout_marginLeft="5dp"
+            android:foreground="?android:attr/selectableItemBackground"
+            app:layout_scrollFlags="snap">
+
+        <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imageView"
+                android:layout_width="150dp"
+                android:layout_height="120dp"
+                android:src="@mipmap/app_logo"
+                android:scaleType="fitStart"/>
+
+        <TextView
+                android:id="@+id/prix"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="1 000 000 Fcfa"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/itemBackground"
+                android:layout_marginLeft="143dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="sans-serif"/>
+
+        <TextView
+                android:id="@+id/superficie"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="16 m²"
+                android:textSize="11sp"
+                android:textColor="@color/background"
+                android:layout_marginLeft="144dp"
+                android:layout_marginTop="44dp"
+                android:ellipsize="end"
+                android:fontFamily="sans-serif"/>
+
+        <TextView
+                android:id="@+id/nombre_chambre"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="2 chambres"
+                android:textSize="11sp"
+                android:textColor="@color/background"
+                android:layout_marginLeft="185dp"
+                android:layout_marginTop="44dp"
+                android:ellipsize="end"
+                android:fontFamily="sans-serif"/>
+
+
+        <TextView
+                android:id="@+id/nombre_de_piece"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="3 pieces"
+                android:textSize="11sp"
+                android:textColor="@color/background"
+                android:layout_marginLeft="263dp"
+                android:layout_marginTop="44dp"
+                android:ellipsize="end"
+                android:fontFamily="sans-serif"/>
+
+
+        <TextView
+                android:id="@+id/desc_type_offre"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Residence"
+                android:textSize="15sp"
+                android:layout_marginLeft="144dp"
+                android:layout_marginTop="58dp"/>
+
+        <TextView
+                android:id="@+id/desc_type_maison"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="type de maison"
+                android:textSize="15sp"
+                android:layout_marginLeft="220dp"
+                android:layout_marginTop="58dp"/>
+
+        <TextView
+                android:id="@+id/lieu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Abobo - Avocatier"
+                android:textSize="12sp"
+                android:textColor="@color/black"
+                android:layout_marginLeft="144dp"
+                android:layout_marginTop="78dp"/>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</RelativeLayout>

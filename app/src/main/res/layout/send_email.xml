@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:orientation="vertical">
+
+    <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:theme="@style/AppTheme"
+            app:title="@string/app_name"
+            app:titleTextColor="@color/white"/>
+
+    <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="400dp"
+            app:cardElevation="3dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_below="@id/toolbar"
+            android:paddingBottom="0dp">
+
+    <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/icon_letter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="40dp"
+            app:cardElevation="3dp"
+            android:layout_marginTop="20dp"
+            app:srcCompat="@drawable/icon_letter"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Veuillez écrire au propriétaire"
+                android:textSize="20sp"
+                android:layout_marginTop="70dp"
+                android:layout_gravity="center_horizontal"
+                android:textAlignment="center"
+                android:textFontWeight="2"
+                android:freezesText="true"
+                android:textColor="@color/black"/>
+
+        <LinearLayout android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:orientation="vertical"
+                      android:layout_marginTop="124dp"
+                      android:layout_marginRight="8dp"
+                      android:layout_marginLeft="8dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textEmailAddress"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:hint="Email"
+                    android:textColor="@color/black"/>
+
+            <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/prenom"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:inputType="textPersonName"
+                    android:hint="Prenom"
+                    android:textColor="@color/black"/>
+
+            <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/nom"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:inputType="textPersonName"
+                    android:hint="Nom"
+                    android:textColor="@color/black"/>
+
+            <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/tel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:inputType="text|phone"
+                    android:hint="Telephone"
+                    android:textColor="@color/black"/>
+
+            <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/message"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:inputType="textMultiLine"
+                    android:hint="Message"
+                    android:textColor="@color/black"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/send_messsage"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="3dp"
+                    android:layout_weight="4"
+                    android:text="Envoyer votre message"
+                    android:background="#F6BF2A"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:textColor="@color/white"
+                    android:drawableRight="@drawable/ic_send_black_24dp"/>
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+</RelativeLayout>

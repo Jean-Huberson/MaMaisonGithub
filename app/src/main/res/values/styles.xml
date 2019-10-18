@@ -1,0 +1,71 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="drawerArrowStyle">@style/DrawerArrowStyle</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <!-- Mise en forme du conteneur des onglets. -->
+    <style name="Widget.Randoomz.TabLayout" parent="Widget.Design.TabLayout">
+        <item name="tabMaxWidth">@dimen/tab_max_width</item>                            <!-- donne la hauteur maximale de vos onglets. -->
+        <item name="tabIndicatorColor">@android:color/white</item>                      <!-- donne la couleur à l'indicateur placé sous un onglet quand il est sélectionné. -->
+        <item name="tabIndicatorHeight">4dp</item>                                      <!-- donne la hauteur de l'indicateur. -->
+        <item name="tabPaddingStart">12dp</item>                                        <!-- place un espace à gauche de l'onglet pour éviter de coller son texte sur son bord. -->
+        <item name="tabPaddingEnd">12dp</item>                                          <!-- place un espace à droite de l'onglet pour éviter de coller son texte sur son bord. -->
+        <item name="tabBackground">?attr/selectableItemBackground</item>                <!-- donne la couleur du fond des onglets. -->
+        <item name="tabTextAppearance">@style/TextAppearance.Randoomz.Tab</item>        <!-- donne le style du texte des onglets non selectionnés. Nous renseignons ici notre précédent style. -->
+        <item name="tabSelectedTextColor">@android:color/white</item>              <!-- donne la couleur du texte de l'onglet quand il est sélectionné.-->
+    </style>
+
+    <!-- Mise en forme des onglets. -->
+    <style name="TextAppearance.Randoomz.Tab" parent="TextAppearance.Design.Tab">
+        <item name="android:textSize">15sp</item>                                       <!-- la taille de la police des onlgets -->
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/textAppearanceColor</item>                <!-- Mise en forme du conteneur des onglets. -->
+        <item name="textAllCaps">true</item>                                            <!-- mets le texte des onglets en majusule -->
+    </style>
+
+    <!--Mise en forme du drawer -->
+    <style name="DrawerArrowStyle" parent="@style/Widget.AppCompat.DrawerArrowToggle">
+        <item name="spinBars">true</item>                                               <!-- definie les l'icone hamburger -->
+        <item name="color">@android:color/white</item>                                  <!-- donne la couleur de l'icone hamburger -->
+    </style>
+
+    <!-- Mise en forme de la navigationView -->
+    <style name="NavigationViewStyle" parent="@style/Widget.Design.NavigationView">
+        <!-- definie la culeur de fond de la navigationBar -->
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/iron</item>
+        <!-- definie la taille du texte contenu dans la navigationBar -->
+
+    </style>
+
+    <style name="LoginTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowBackground">@color/primary</item>
+        <item name="colorControlNormal">@color/iron</item>
+        <item name="colorControlActivated">@color/white</item>
+        <item name="colorControlHighlight">@color/white</item>
+        <item name="android:textColorHint">@color/iron</item>
+        <item name="colorButtonNormal">@color/primary_darker</item>
+    </style>
+
+    <style name="ThemeDialog" parent="Theme.AppCompat.Dialog">
+        <item name="colorAccent">@color/white</item>
+        <item name="android:textColorPrimary">@color/iron</item>
+        <item name="android:background">@color/primary</item>
+    </style>
+
+</resources>

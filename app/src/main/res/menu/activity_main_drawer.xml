@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+                android:id="@+id/nav_home"
+                android:icon="@drawable/icon_home"
+                android:title="@string/menu_home" />
+        <item
+                android:id="@+id/connexion"
+                android:title="Se connecter"
+                android:icon="@drawable/icon_user"/>
+    </group>
+
+    <item android:title="Espace client">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                        android:id="@+id/nav_alerte"
+                        android:icon="@drawable/icon_alerte"
+                        android:title="@string/menu_alerte" />
+                <item
+                        android:id="@+id/nav_favoris"
+                        android:icon="@drawable/icon_favoris"
+                        android:title="@string/menu_favoris" />
+            </group>
+        </menu>
+    </item>
+
+    <item android:title="Espace proprietaire">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                        android:id="@+id/nav_gerer_annonce"
+                        android:title="Gerer mes annonces"
+                        android:icon="@drawable/icon_annonce" />
+                <item
+                        android:id="@+id/nav_new_annonce"
+                        android:title="Poster une annonce"
+                        android:icon="@drawable/icon_poster_annonce" />
+            </group>
+        </menu>
+    </item>
+
+</menu>

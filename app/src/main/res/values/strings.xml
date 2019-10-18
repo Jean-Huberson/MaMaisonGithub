@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">MaMaison</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Huberson Kouakou</string>
+    <string name="nav_header_subtitle">koffi.kouakou@uvci.edu.ci</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="search_title">Search</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_alerte">Alerte</string>
+    <string name="menu_favoris">Favoris</string>
+</resources>

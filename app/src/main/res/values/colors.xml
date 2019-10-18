@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#0067f3</color>
+    <color name="colorPrimaryDark">#000000</color>
+    <color name="colorAccent">#fe5622</color>
+    <color name="tabBackground">#48BDF3</color>         <!-- -->
+    <color name="textAppearanceColor">#70B9FA</color>   <!-- donne la couleur des onglets desactivés -->
+
+    <color name="primary">#EE2E4AF5</color>
+    <color name="primary_dark">#E12929</color>
+    <color name="primary_darker">#8312B4</color>
+    <color name="accent">#FFFFFF</color>
+
+    <color name="itemBackground">#1376CE</color>        <!-- donne la couleur d'arriere plan des items du menu drawer-->
+    <color name="background">#2D517E</color>            <!-- donne la couleur de fond du drawer-->
+    <color name="black">#000000</color>
+
+    <color name="iron">#CCCCCC</color>
+    <color name="white">#FFFFFF</color>
+</resources>
