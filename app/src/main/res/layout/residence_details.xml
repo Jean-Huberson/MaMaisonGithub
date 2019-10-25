@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:theme="@style/AppTheme"
+            app:title="@string/app_name"
+            app:titleTextColor="@color/white"/>
+
+    <FrameLayout
+            android:id="@+id/frame_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="2dp"
+            android:layout_below="@id/toolbar">
+
+        <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imageSlider"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/photo"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:scaleType="fitXY"/>
+
+        <ProgressBar
+                android:id="@+id/progres_details"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="120dp"
+                android:outlineAmbientShadowColor="@color/iron"
+                android:minWidth="70dp"
+                android:minHeight="50dp"/>
+
+    </FrameLayout>
+
+    <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/frame_layout"
+            android:scrollbars="none">
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+            <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                <TextView
+                        android:id="@+id/prix"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="1 000 000 Fcfa"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/itemBackground"
+                        android:layout_marginLeft="23dp"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="sans-serif"/>
+
+                <TextView
+                        android:id="@+id/superficie"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="16 m²"
+                        android:textSize="14sp"
+                        android:textColor="@color/background"
+                        android:layout_marginLeft="23dp"
+                        android:layout_marginTop="14dp"
+                        android:ellipsize="end"
+                        android:fontFamily="sans-serif"
+                        android:layout_below="@id/prix"/>
+
+                <TextView
+                        android:id="@+id/nombre_chambre"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="2 chambres"
+                        android:textSize="14sp"
+                        android:textColor="@color/background"
+                        android:layout_marginLeft="135dp"
+                        android:layout_marginTop="14dp"
+                        android:ellipsize="end"
+                        android:fontFamily="sans-serif"
+                        android:layout_below="@id/prix"/>
+
+                <TextView
+                        android:id="@+id/nombre_de_piece"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="3 pieces"
+                        android:textSize="14sp"
+                        android:textColor="@color/background"
+                        android:layout_marginLeft="73dp"
+                        android:layout_marginTop="14dp"
+                        android:ellipsize="end"
+                        android:fontFamily="sans-serif"
+                        android:layout_below="@id/prix"/>
+
+                <TextView
+                        android:id="@+id/desc_type_offre"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Residence"
+                        android:textSize="15sp"
+                        android:layout_marginLeft="23dp"
+                        android:layout_marginTop="44dp"
+                        android:layout_below="@id/prix"/>
+
+                <TextView
+                        android:id="@+id/desc_type_maison"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="type de maison"
+                        android:textSize="15sp"
+                        android:layout_marginLeft="73dp"
+                        android:layout_marginTop="44dp"
+                        android:layout_below="@id/prix"/>
+
+                <TextView
+                        android:id="@+id/lieu"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Abobo - Avocatier"
+                        android:textSize="12sp"
+                        android:textColor="@color/black"
+                        android:layout_marginLeft="24dp"
+                        android:layout_marginTop="78dp"
+                        android:layout_below="@id/prix"/>
+
+                <TextView
+                        android:id="@+id/description"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginLeft="23dp"
+                        android:layout_marginRight="23dp"
+                        android:layout_below="@id/lieu"
+                        android:elegantTextHeight="true"
+                        android:autoSizeMinTextSize="5dp"
+                        android:lineSpacingExtra="1dp"
+                        android:fallbackLineSpacing="true"
+                        android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."/>
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="32dp"
+            android:layout_marginRight="24dp"
+            android:background="?android:attr/selectableItemBackground"
+            android:clickable="true"
+            android:elevation="16dp"
+            android:focusable="true"
+            android:visibility="visible"
+            app:backgroundTint="#0067f3"
+            app:pressedTranslationZ="12dp"
+            app:srcCompat="@drawable/icon_plus"/>
+
+    <TextView
+            android:id="@+id/textview_call"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="186dp"
+            android:layout_marginRight="88dp"
+            android:background="#212121"
+            android:padding="8dp"
+            android:text="Appel"
+            android:textColor="#ffffff"
+            android:visibility="invisible" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="176dp"
+            android:layout_marginRight="24dp"
+            android:background="?android:attr/selectableItemBackground"
+            android:clickable="true"
+            android:elevation="16dp"
+            android:focusable="true"
+            android:visibility="invisible"
+            app:backgroundTint="#ffffff"
+            app:pressedTranslationZ="12dp"
+            app:srcCompat="@drawable/call" />
+
+    <TextView
+            android:id="@+id/textview_mail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="116dp"
+            android:layout_marginRight="88dp"
+            android:background="#212121"
+            android:padding="8dp"
+            android:text="Email"
+            android:textColor="#ffffff"
+            android:visibility="invisible" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginBottom="106dp"
+            android:layout_marginRight="24dp"
+            android:background="?android:attr/selectableItemBackground"
+            android:clickable="true"
+            android:elevation="16dp"
+            android:focusable="true"
+            android:visibility="invisible"
+            app:backgroundTint="#ffffff"
+            app:pressedTranslationZ="12dp"
+            app:srcCompat="@drawable/mail"
+            android:layout_alignParentRight="true"/>
+
+</RelativeLayout>
+

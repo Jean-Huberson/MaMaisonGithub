@@ -2,6 +2,7 @@ package com.freehome.mamaison.activities.menuTab
 
 import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
 import android.text.Editable
 import android.text.TextWatcher
 import android.view.*
@@ -44,12 +45,12 @@ class FragmentOngletOne: Fragment(), AdapterListVente.ClickListener, SearchView.
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        val splash_time_out:Long = 3000
         list_loge = listOf<ListLog>()
         mService = RetrofitClient.getClient()
         recyclerView = view.findViewById(R.id.recyclerview) as RecyclerView
         val layoutManager = LinearLayoutManager(context)
-        mAdapter = AdapterListVente(this, context)
+        mAdapter = AdapterListVente(this)
         recyclerView.layoutManager = layoutManager
         recyclerView.setHasFixedSize(true)
         recyclerView.setAdapter(mAdapter)
@@ -59,7 +60,10 @@ class FragmentOngletOne: Fragment(), AdapterListVente.ClickListener, SearchView.
         progressbar?.isVisible = true
         swipe?.setOnRefreshListener {
             getSalesToApi()
-            swipe?.isRefreshing = false
+            Handler().postDelayed({
+                swipe?.isRefreshing = false
+            }, splash_time_out)
+
         }
 
         getSalesToApi()
@@ -115,17 +119,18 @@ class FragmentOngletOne: Fragment(), AdapterListVente.ClickListener, SearchView.
             startActivity(intent)
     }
 
-    /*override fun onCreateOptionsMenu(menu: Menu?, inflater: MenuInflater?) {
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         inflater!!.inflate(R.menu.main, menu)
         val menuItem = menu!!.findItem(R.id.action_search)
         val action_search = menuItem
-            action_search.actionView
+        action_search.actionView
         val searchView = action_search as SearchView
-            searchView.setOnQueryTextListener(this)
+        searchView.setOnQueryTextListener(this)
 
         super.onCreateOptionsMenu(menu, inflater)
+    }
 
-    }*/
+
 
     override fun onQueryTextSubmit(p0: String?): Boolean {
         return false

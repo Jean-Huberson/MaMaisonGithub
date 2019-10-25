@@ -16,7 +16,7 @@ import com.squareup.picasso.Picasso
 import java.lang.Exception
 
 
-class AdapterListVente(private val listener: ClickListener, private val context:Context?): RecyclerView.Adapter<AdapterListVente.ViewHolder>(){
+class AdapterListVente(private val listener: ClickListener): RecyclerView.Adapter<AdapterListVente.ViewHolder>(){
 
     var itemList:List<ListLog> = listOf()
 

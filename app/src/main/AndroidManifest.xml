@@ -25,6 +25,10 @@
         </activity>
         <activity android:name=".activities.activitiesDetails.VenteDetail"/>
         <activity android:name=".activities.mailActivities.SendMail"/>
+        <activity android:name=".activities.activitiesDetails.LocationDetails"/>
+        <activity android:name=".activities.activitiesDetails.ResidenceDetails"/>
+        <activity android:name=".activities.mailActivities.SendMailLocation"/>
+        <activity android:name=".activities.mailActivities.SendMailResidence"/>
     </application>
 
 </manifest>

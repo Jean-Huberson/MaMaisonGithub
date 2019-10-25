@@ -1,17 +1,22 @@
 package com.freehome.mamaison.activities.menuTab
 
+import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ProgressBar
 import android.widget.Toast
+import androidx.core.os.postDelayed
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.freehome.mamaison.adapters.AdapterListResidence
 import com.freehome.mamaison.R
+import com.freehome.mamaison.activities.activitiesDetails.ResidenceDetails
 import com.freehome.mamaison.mamaisonapi.ApiServices
 import com.freehome.mamaison.models.listFolder.ListResidence
 import com.freehome.mamaison.models.responseFolder.ResidenceResponse
@@ -20,11 +25,14 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class FragmentOngletThree: Fragment(), View.OnClickListener {
+class FragmentOngletThree: Fragment(), AdapterListResidence.ClickListener{
+
 
     lateinit var mService: ApiServices
     lateinit var recyclerView: RecyclerView
     lateinit var mAdapter: AdapterListResidence
+    var progressbar:ProgressBar? = null
+    var swipe:SwipeRefreshLayout? = null
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val rootView = inflater.inflate(R.layout.fragment_onglet_three, container, false) as ViewGroup
@@ -34,7 +42,7 @@ class FragmentOngletThree: Fragment(), View.OnClickListener {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        val splash_time_out:Long = 3000
         mService = RetrofitClient.getClient()
         recyclerView = view.findViewById(R.id.recyclerview) as RecyclerView
         val layoutManager = LinearLayoutManager(context)
@@ -42,9 +50,18 @@ class FragmentOngletThree: Fragment(), View.OnClickListener {
         recyclerView.layoutManager = layoutManager
         recyclerView.setHasFixedSize(true)
         recyclerView.setAdapter(mAdapter)
-        val progressBar = view.findViewById<ProgressBar>(R.id.progressBar)
-        val swipe = view.findViewById<SwipeRefreshLayout>(R.id.swipeRefresh)
 
+        progressbar = view.findViewById<ProgressBar>(R.id.progressBar)
+        swipe = view.findViewById<SwipeRefreshLayout>(R.id.swipeRefresh)
+        progressbar?.isVisible = true
+        swipe?.setOnRefreshListener {
+            getResidencesToApi()
+
+            Handler().postDelayed({
+                swipe?.isRefreshing = false
+            }, splash_time_out)
+
+        }
 
         getResidencesToApi()
 
@@ -65,6 +82,7 @@ class FragmentOngletThree: Fragment(), View.OnClickListener {
                             list_residence= response.body()!!.list_Residence
                             mAdapter.adapterListResidence(list_residence)
                             mAdapter.notifyDataSetChanged()
+                            progressbar?.isVisible = false
 
                         }
                         else{
@@ -78,8 +96,19 @@ class FragmentOngletThree: Fragment(), View.OnClickListener {
         })
     }
 
-    override fun onClick(p0: View?) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    override fun onClick(item: ListResidence) {
+        val intent = Intent(context, ResidenceDetails::class.java)
+        intent.putExtra("IMAGE", item.getReferenceMedias())
+        intent.putExtra("DESC_LOG", item.getDescriptionTypeLogement())
+        intent.putExtra("TYPE_OFFRE", item.getDescriptionTypeOffres())
+        intent.putExtra("DESC_COMMUNE", item.getDescriptionCommune())
+        intent.putExtra("DESC_QUARTIER", item.getDescriptionQuartier())
+        intent.putExtra("EMAIL_PROPRIETAIRE", item.getEmailProprietaires())
+        intent.putExtra("NBRE_CHAMBRE", item.getNombreDeChambresLogements())
+        intent.putExtra("NBRE_PIECE", item.getNombreDePiecesLogements())
+        intent.putExtra("SUPERFICIE", item.getSuperficieLogements())
+        intent.putExtra("TEL_PROPRIETAIRE", item.getTelephoneProprietaires())
+        startActivity(intent)
     }
 
     override fun onStart() {

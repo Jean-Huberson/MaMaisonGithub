@@ -11,7 +11,7 @@ import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 
 object RetrofitClient {
-    private val ENDPOINT = "http://192.168.1.102/mamaisonapi/v1/"
+    private val ENDPOINT = "http://192.168.1.116/mamaisonapi/v1/"
 
     fun getClient():ApiServices {
 
